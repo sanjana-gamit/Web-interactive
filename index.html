@@ -15,77 +15,90 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <h1>Welcome to My Interactive Website</h1>
     </header>
-    <!-- NAVIGATION BAR -->
-<nav class="navbar">
-    <ul>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#image">Image</a></li>
-        <li><a href="#interactive">Interactive</a></li>
-        <li><a href="#api">API Data</a></li>
-    </ul>
-</nav>
 
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#image">Image</a></li>
+            <li><a href="#interactive">Interactive</a></li>
+            <li><a href="#api">API Data</a></li>
+            <li><a href="#advanced-api">Advanced API</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- TASK 1 & TASK 2 -->
-        <section>
+        <!-- INTRODUCTION -->
         <section id="intro">
-    <h2 style="color: #4a90e2;">Introduction</h2>
-    <p style="background-color: #f0f0f0; padding: 10px;">
-        This webpage is created for a front-end development project.
-        It includes HTML, CSS, JavaScript, interactivity, and APIs.
-    </p>
-</section>
+            <h2 style="color: #4a90e2;">Introduction</h2>
+            <p style="background-color: #f0f0f0; padding: 10px;">
+                This webpage is created for a front-end development project.
+                It includes HTML, CSS, JavaScript, interactivity, and API integration.
+            </p>
+        </section>
 
-<section id="image">
-    <h2>Image</h2>
-    <img src="what-is-ai-1.jpg" alt="AI image" class="main-image">
-</section>
+        <!-- IMAGE SECTION -->
+        <section id="image">
+            <h2>Image</h2>
+            <img src="what-is-ai-1.jpg" alt="AI image" class="main-image">
+        </section>
 
-<section id="interactive">
-    <h2>Interactive Button</h2>
-    
-<button id="themeBtn">Change Theme</button>
-</section>
+        <!-- INTERACTIVITY SECTION -->
+        <section id="interactive">
+            <h2>Interactive Button</h2>
+            <button id="themeBtn">Change Theme</button>
+        </section>
 
-<section id="api">
-    <h2>API Data (JSONPlaceholder)</h2>
-    <button id="loadApiBtn" class="btn">Load API Data</button>
-    <div id="apiResult" class="api-box"></div>
-</section>
-            <section id="advanced-api">
-    <h2>Advanced API Features</h2>
+        <!-- BASIC API SECTION -->
+        <section id="api">
+            <h2>API Data (JSONPlaceholder)</h2>
+            <button id="loadApiBtn" class="btn">Load API Data</button>
+            <div id="apiResult" class="api-box"></div>
+        </section>
 
-    <!-- Feature 1: Load All Posts -->
-    <button id="loadAllPostsBtn" class="btn">Load All Posts</button>
-    <div id="postsContainer" class="card-container"></div>
+        <!-- ADVANCED API FEATURES -->
+        <section id="advanced-api">
+            <h2>Advanced API Features</h2>
 
-    <br><br>
+            <!-- Feature 1: Load All Posts -->
+            <button id="loadAllPostsBtn" class="btn">Load All Posts</button>
+            <div id="postsContainer" class="card-container"></div>
 
-    <!-- Feature 2: Search Post by ID -->
-    <h3>Search Post by ID</h3>
-    <input type="number" id="postIdInput" placeholder="Enter Post ID (1-100)" class="input-box">
-    <button id="searchPostBtn" class="btn">Search</button>
+            <br><br>
 
-    <div id="searchResult" class="api-box"></div>
-            </section>
+            <!-- Feature 2: Search Post by ID -->
+            <h3>Search Post by ID</h3>
+            <input 
+                type="number" 
+                id="postIdInput" 
+                placeholder="Enter Post ID (1-100)" 
+                class="input-box"
+            >
+            <button id="searchPostBtn" class="btn">Search</button>
+
+            <div id="searchResult" class="api-box"></div>
+        </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer id="mainFooter">
-    <p>© 2025 EduBot GTU | All Rights Reserved</p>
+        <p>© 2025 EduBot GTU | All Rights Reserved</p>
 
-    <div class="social-icons">
-        <a href="#" class="icon">🌐</a>
-        <a href="#" class="icon">📘</a>
-        <a href="#" class="icon">📸</a>
-    </div>
-</footer>
+        <div class="social-icons">
+            <a href="#" class="icon">🌐</a>
+            <a href="#" class="icon">📘</a>
+            <a href="#" class="icon">📸</a>
+        </div>
+    </footer>
 
-    <!-- JavaScript File -->
+    <!-- JS FILE -->
     <script src="script.js"></script>
 
 </body>
