@@ -133,3 +133,19 @@ section {
     border-radius: 5px;
     margin-right: 10px;
 }
+header, main {
+    transition: background 0.7s ease-in-out;
+}
+
+#themeBtn {
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#themeBtn:hover {
+    opacity: 0.8;
+}
