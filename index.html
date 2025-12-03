@@ -28,6 +28,7 @@
             <li><a href="#interactive">Interactive</a></li>
             <li><a href="#api">API Data</a></li>
             <li><a href="#advanced-api">Advanced API</a></li>
+            <li><a href="#form-task">Contact Form</a></li>
         </ul>
     </nav>
 
@@ -46,13 +47,13 @@
         <!-- IMAGE SECTION -->
         <section id="image">
             <h2>Image</h2>
-            <img src="what-is-ai-1.jpg" alt="AI image" class="main-image">
+            <img src="what-is-ai-1.jpg" alt="AI illustration" class="main-image">
         </section>
 
         <!-- INTERACTIVITY SECTION -->
         <section id="interactive">
             <h2>Interactive Button</h2>
-            <button id="themeBtn">Change Theme</button>
+            <button id="themeBtn" class="btn">Change Theme</button>
         </section>
 
         <!-- BASIC API SECTION -->
@@ -70,8 +71,6 @@
             <button id="loadAllPostsBtn" class="btn">Load All Posts</button>
             <div id="postsContainer" class="card-container"></div>
 
-            <br><br>
-
             <!-- Feature 2: Search Post by ID -->
             <h3>Search Post by ID</h3>
             <input 
@@ -79,51 +78,54 @@
                 id="postIdInput" 
                 placeholder="Enter Post ID (1-100)" 
                 class="input-box"
+                min="1"
+                max="100"
             >
             <button id="searchPostBtn" class="btn">Search</button>
 
             <div id="searchResult" class="api-box"></div>
         </section>
-<section id="form-task">
-    <h2>Task 6: Contact Form</h2>
-    <form id="contactForm" novalidate>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-            <span class="error-message"></span>
-        </div>
 
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <span class="error-message"></span>
-        </div>
+        <!-- CONTACT FORM – TASK 6 -->
+        <section id="form-task">
+            <h2>Contact Form</h2>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <span class="error-message"></span>
+                </div>
 
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
-            <span class="error-message"></span>
-        </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <span class="error-message"></span>
+                </div>
 
-        <button type="submit" class="btn">Submit</button>
-        <p id="formFeedback"></p>
-    </form>
-</section>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+                <p id="formFeedback"></p>
+            </form>
+        </section>
 
     </main>
 
     <!-- FOOTER -->
     <footer id="mainFooter">
         <p>© 2025 EduBot GTU | All Rights Reserved</p>
-
         <div class="social-icons">
-            <a href="#" class="icon">🌐</a>
-            <a href="#" class="icon">📘</a>
-            <a href="#" class="icon">📸</a>
+            <a href="#" class="icon" aria-label="Website">🌐</a>
+            <a href="#" class="icon" aria-label="Facebook">📘</a>
+            <a href="#" class="icon" aria-label="Instagram">📸</a>
         </div>
     </footer>
 
-    <!-- JS FILE -->
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 
 </body>
