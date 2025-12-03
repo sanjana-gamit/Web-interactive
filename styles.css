@@ -1,3 +1,6 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,7 +8,14 @@ body {
     background: white;
     transition: background 0.4s;
 }
-/* NAVBAR */
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 .navbar {
     width: 100%;
     background: #333;
@@ -35,26 +45,30 @@ body {
     transition: 0.3s;
 }
 
-.navbar a:hover, 
+.navbar a:hover,
 .navbar a.active {
     background: #4a90e2;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
+/* ===========================
+   HEADER
+=========================== */
 header {
     background: #4a90e2;
     color: white;
     padding: 20px;
     text-align: center;
+    transition: background 0.7s ease-in-out;
 }
 
+/* ===========================
+   MAIN CONTENT
+=========================== */
 main {
     max-width: 900px;
     margin: auto;
     padding: 20px;
+    transition: background 0.7s ease-in-out;
 }
 
 section {
@@ -69,6 +83,7 @@ section {
     border-radius: 10px;
 }
 
+/* BUTTONS */
 .btn {
     padding: 12px 20px;
     background: #4a90e2;
@@ -77,11 +92,30 @@ section {
     cursor: pointer;
     border-radius: 8px;
     font-size: 16px;
+    transition: background 0.3s;
 }
+
 .btn:hover {
     background: #357abd;
 }
 
+#themeBtn {
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#themeBtn:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   API BOX
+=========================== */
 .api-box {
     margin-top: 15px;
     padding: 15px;
@@ -91,22 +125,9 @@ section {
     border-radius: 6px;
 }
 
-/* TASK 3: Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 22px;
-    }
-
-    .btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .main-image {
-        max-width: 100%;
-    }
-}
-/* Card Layout */
+/* ===========================
+   CARD LAYOUT (ADVANCED API)
+=========================== */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -118,7 +139,7 @@ section {
     background: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #4a90e2;
 }
 
@@ -133,22 +154,10 @@ section {
     border-radius: 5px;
     margin-right: 10px;
 }
-header, main {
-    transition: background 0.7s ease-in-out;
-}
 
-#themeBtn {
-    padding: 10px 20px;
-    background: #222;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-#themeBtn:hover {
-    opacity: 0.8;
-}
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     padding: 20px;
     text-align: center;
@@ -174,4 +183,36 @@ footer {
 .social-icons .icon:hover {
     opacity: 0.7;
     transform: scale(1.1);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    .btn,
+    #themeBtn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .main-image {
+        max-width: 100%;
+    }
+
+    .input-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
 }
