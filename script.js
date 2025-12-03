@@ -1,15 +1,26 @@
-// Get the button
-const btn = document.getElementById("colorBtn");
+/* TASK 4 – Change Background Color */
+document.getElementById("colorBtn").addEventListener("click", function () {
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.background = randomColor;
+});
 
-// Function to change background color
-btn.addEventListener("click", function () {
-    
-    // Array of colors
-    const colors = ["#f7f7f7", "#ffe5b4", "#d4f1f9", "#f5d3d3", "#e8f5e9", "#f0e6ff"];
+/* TASK 5 – API Integration */
+document.getElementById("loadApiBtn").addEventListener("click", function () {
 
-    // Pick a random color
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => response.json())
+        .then(data => {
+            const box = document.getElementById("apiResult");
+            box.style.display = "block";
 
-    // Apply to body background
-    document.body.style.backgroundColor = randomColor;
+            box.innerHTML = `
+                <h3>${data.title}</h3>
+                <p>${data.body}</p>
+                <p><b>User ID:</b> ${data.userId}</p>
+            `;
+        })
+        .catch(error => {
+            alert("Error loading API!");
+            console.log(error);
+        });
 });
