@@ -1,7 +1,12 @@
-/* TASK 4 – Change Background Color */
+/* TASK 4 – Change Background Color (Page + Header) */
 document.getElementById("colorBtn").addEventListener("click", function () {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+    // Change full page color
     document.body.style.background = randomColor;
+
+    // Change header color
+    document.querySelector("header").style.background = randomColor;
 });
 
 /* TASK 5 – API Integration */
