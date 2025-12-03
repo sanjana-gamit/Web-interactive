@@ -140,3 +140,55 @@ document.getElementById("themeBtn").addEventListener("click", function () {
     document.querySelector("main").style.transition = "0.7s";
     document.querySelector("footer").style.transition = "0.7s";
 });
+/* ===========================
+   TASK 6 – FORM VALIDATION
+=========================== */
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent actual form submission
+
+        let isValid = true;
+
+        // Clear previous errors
+        const errorMessages = contactForm.querySelectorAll(".error-message");
+        errorMessages.forEach(span => span.textContent = "");
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+
+        // Name validation
+        if (name.value.trim() === "") {
+            name.nextElementSibling.textContent = "Name is required.";
+            isValid = false;
+        }
+
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.value.trim() === "") {
+            email.nextElementSibling.textContent = "Email is required.";
+            isValid = false;
+        } else if (!emailPattern.test(email.value.trim())) {
+            email.nextElementSibling.textContent = "Please enter a valid email.";
+            isValid = false;
+        }
+
+        // Message validation
+        if (message.value.trim() === "") {
+            message.nextElementSibling.textContent = "Message cannot be empty.";
+            isValid = false;
+        }
+
+        // If valid, show success message
+        const formFeedback = document.getElementById("formFeedback");
+        if (isValid) {
+            formFeedback.textContent = "Form submitted successfully!";
+            formFeedback.style.color = "green";
+            contactForm.reset();
+        } else {
+            formFeedback.textContent = "Please fix errors above.";
+            formFeedback.style.color = "red";
+        }
+    });
+}
