@@ -1,23 +1,31 @@
-/* TASK 4 – Change Background Color (Page + Header) */
-document.getElementById("colorBtn").addEventListener("click", function () {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+/* ===========================
+   TASK 4 – Change Background Color (Optional Legacy Button)
+=========================== */
+const colorBtn = document.getElementById("colorBtn");
+if (colorBtn) {
+    colorBtn.addEventListener("click", function () {
+        const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
-    // Change full page color
-    document.body.style.background = randomColor;
+        document.body.style.background = randomColor;
+        document.querySelector("header").style.background = randomColor;
+        document.querySelector("footer").style.background = randomColor;
 
-    // Change header color
-    document.querySelector("header").style.background = randomColor;
-});
+        // Smooth transition
+        document.querySelector("header").style.transition = "0.7s";
+        document.querySelector("footer").style.transition = "0.7s";
+        document.body.style.transition = "0.7s";
+    });
+}
 
-/* TASK 5 – API Integration */
+/* ===========================
+   TASK 5 – Basic API Integration
+=========================== */
 document.getElementById("loadApiBtn").addEventListener("click", function () {
-
     fetch("https://jsonplaceholder.typicode.com/posts/1")
         .then(response => response.json())
         .then(data => {
             const box = document.getElementById("apiResult");
             box.style.display = "block";
-
             box.innerHTML = `
                 <h3>${data.title}</h3>
                 <p>${data.body}</p>
@@ -30,7 +38,9 @@ document.getElementById("loadApiBtn").addEventListener("click", function () {
         });
 });
 
-
+/* ===========================
+   NAVBAR – Active Section Highlight
+=========================== */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar a");
 
@@ -51,9 +61,11 @@ window.addEventListener("scroll", () => {
         }
     });
 });
-/* FEATURE 1 – Load Multiple Posts (Cards) */
+
+/* ===========================
+   FEATURE 1 – Load Multiple Posts (Cards)
+=========================== */
 document.getElementById("loadAllPostsBtn").addEventListener("click", () => {
-    
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then(res => res.json())
         .then(posts => {
@@ -73,7 +85,10 @@ document.getElementById("loadAllPostsBtn").addEventListener("click", () => {
         })
         .catch(err => console.log(err));
 });
-/* FEATURE 2 – Search API by ID */
+
+/* ===========================
+   FEATURE 2 – Search API by ID
+=========================== */
 document.getElementById("searchPostBtn").addEventListener("click", () => {
     const id = document.getElementById("postIdInput").value;
     const output = document.getElementById("searchResult");
@@ -99,7 +114,10 @@ document.getElementById("searchPostBtn").addEventListener("click", () => {
             console.log(err);
         });
 });
-// Professional color combinations (Header + Main)
+
+/* ===========================
+   FEATURE 6 – Theme Color Change (Header + Main + Footer)
+=========================== */
 const colorThemes = [
     { header: "#0a3d62", main: "#82ccdd" }, // Blue Theme
     { header: "#6a1b9a", main: "#ba68c8" }, // Purple
@@ -110,26 +128,14 @@ const colorThemes = [
 ];
 
 document.getElementById("themeBtn").addEventListener("click", function () {
-    // Pick a random theme
     const theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
 
-    // Apply to header and main
+    // Apply colors
     document.querySelector("header").style.background = theme.header;
     document.querySelector("main").style.background = theme.main;
+    document.querySelector("footer").style.background = theme.header;
 
-    // Smooth transition
-    document.querySelector("header").style.transition = "0.7s";
-    document.querySelector("main").style.transition = "0.7s";
-});
-document.getElementById("themeBtn").addEventListener("click", function () {
-
-    const theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
-
-    document.querySelector("header").style.background = theme.header;
-    document.querySelector("main").style.background = theme.main;
-    document.querySelector("footer").style.background = theme.header; // footer matches header
-
-    // Smooth transition
+    // Smooth transitions
     document.querySelector("header").style.transition = "0.7s";
     document.querySelector("main").style.transition = "0.7s";
     document.querySelector("footer").style.transition = "0.7s";
