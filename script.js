@@ -99,3 +99,25 @@ document.getElementById("searchPostBtn").addEventListener("click", () => {
             console.log(err);
         });
 });
+// Professional color combinations (Header + Main)
+const colorThemes = [
+    { header: "#0a3d62", main: "#82ccdd" }, // Blue Theme
+    { header: "#6a1b9a", main: "#ba68c8" }, // Purple
+    { header: "#1e5631", main: "#a4de02" }, // Green
+    { header: "#b33939", main: "#fab1a0" }, // Red / Peach
+    { header: "#30336b", main: "#95afc0" }, // Navy / Grey
+    { header: "#2d3436", main: "#dfe6e9" }  // Dark / Light
+];
+
+document.getElementById("themeBtn").addEventListener("click", function () {
+    // Pick a random theme
+    const theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+
+    // Apply to header and main
+    document.querySelector("header").style.background = theme.header;
+    document.querySelector("main").style.background = theme.main;
+
+    // Smooth transition
+    document.querySelector("header").style.transition = "0.7s";
+    document.querySelector("main").style.transition = "0.7s";
+});
