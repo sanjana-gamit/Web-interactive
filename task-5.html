@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website – Enhanced</title>
+
+    <link rel="icon" href="what-is-ai-1.jpg" type="image/png">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        header {
+            background: #4a90e2;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Typewriter animation */
+        #typewriter {
+            font-size: 22px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 4s steps(30) infinite alternate,
+                       blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 { color: #333; }
+
+        /* Image Animation */
+        .main-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 12px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .main-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 20px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin-right: 10px;
+        }
+        .btn:hover { background: #357abd; }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        /* Clock */
+        #clock {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        /* Scroll to top */
+        #topBtn {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #4a90e2;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="typewriter">Welcome to My Interactive Website</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Live Clock</h2>
+            <p id="clock"></p>
+        </section>
+
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                This webpage now contains multiple interactive features including animation,
+                dark mode, background color changer, scroll button, and more!
+            </p>
+        </section>
+
+        <section>
+            <h2>Image</h2>
+            <img src="what-is-ai-1.jpg" alt="AI image" class="main-image">
+        </section>
+
+        <section>
+            <h2>Interactive Features</h2>
+
+            <button id="colorBtn" class="btn">Random Background Color</button>
+            <button id="darkModeBtn" class="btn">Toggle Dark Mode</button>
+        </section>
+
+        <section>
+            <h2>Visitor Count</h2>
+            <p>You have visited this page: <span id="visitCount">0</span> times.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Enhanced Interactive Website</p>
+    </footer>
+
+    <!-- Scroll-to-top button -->
+    <button id="topBtn">↑</button>
+
+    <script>
+        /* Random Background Color */
+        document.getElementById("colorBtn").addEventListener("click", function () {
+            const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = color;
+        });
+
+        /* Dark Mode Toggle */
+        document.getElementById("darkModeBtn").addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        /* Live Clock */
+        function updateClock() {
+            document.getElementById("clock").innerText =
+                new Date().toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+
+        /* Visitor Counter */
+        let count = localStorage.getItem("visits");
+        if (!count) count = 0;
+        count++;
+        localStorage.setItem("visits", count);
+        document.getElementById("visitCount").innerText = count;
+
+        /* Scroll to top btn */
+        const topBtn = document.getElementById("topBtn");
+        window.addEventListener("scroll", () => {
+            topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+        topBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>
