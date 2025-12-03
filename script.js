@@ -121,3 +121,16 @@ document.getElementById("themeBtn").addEventListener("click", function () {
     document.querySelector("header").style.transition = "0.7s";
     document.querySelector("main").style.transition = "0.7s";
 });
+document.getElementById("themeBtn").addEventListener("click", function () {
+
+    const theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+
+    document.querySelector("header").style.background = theme.header;
+    document.querySelector("main").style.background = theme.main;
+    document.querySelector("footer").style.background = theme.header; // footer matches header
+
+    // Smooth transition
+    document.querySelector("header").style.transition = "0.7s";
+    document.querySelector("main").style.transition = "0.7s";
+    document.querySelector("footer").style.transition = "0.7s";
+});
